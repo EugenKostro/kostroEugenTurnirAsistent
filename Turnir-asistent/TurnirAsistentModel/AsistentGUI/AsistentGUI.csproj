@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{048D00A9-1E4E-4904-BD02-89F908115F84}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AsistentGUI</RootNamespace>
+    <AssemblyName>AsistentGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DodavanjeEkipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodavanjeEkipe.Designer.cs">
+      <DependentUpon>DodavanjeEkipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodavanjeNagrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodavanjeNagrada.Designer.cs">
+      <DependentUpon>DodavanjeNagrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KreiranjeTurnira.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KreiranjeTurnira.Designer.cs">
+      <DependentUpon>KreiranjeTurnira.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PregledTurnira.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PregledTurnira.Designer.cs">
+      <DependentUpon>PregledTurnira.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TurnirAsistent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TurnirAsistent.Designer.cs">
+      <DependentUpon>TurnirAsistent.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DodavanjeEkipe.resx">
+      <DependentUpon>DodavanjeEkipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodavanjeNagrada.resx">
+      <DependentUpon>DodavanjeNagrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KreiranjeTurnira.resx">
+      <DependentUpon>KreiranjeTurnira.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PregledTurnira.resx">
+      <DependentUpon>PregledTurnira.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TurnirAsistent.resx">
+      <DependentUpon>TurnirAsistent.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TurnirAsistentModel\TurnirAsistentModel.csproj">
+      <Project>{ca91207a-0e95-44d1-8baf-abc7a842d1e4}</Project>
+      <Name>TurnirAsistentModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
